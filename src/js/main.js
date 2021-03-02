@@ -1,5 +1,6 @@
 import WOW from 'wow.js';
 import modals from './modules/modals';
+import sliders from './modules/sliders';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -8,4 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   new WOW().init();
 
   modals();
+
+  sliders('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
+  sliders('.main-slider-item', 'vertical');
 });
