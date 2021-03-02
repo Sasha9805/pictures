@@ -1696,6 +1696,7 @@ var sliders = function sliders(slides, dir, prev, next) {
   items[0].parentNode.addEventListener('mouseleave', function () {
     activateAnimation();
   });
+  console.log(12);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (sliders);
