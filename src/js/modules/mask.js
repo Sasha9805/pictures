@@ -25,9 +25,6 @@ const mask = selector => {
       val = def;
     }
 
-    console.log('val= ' + val);
-    console.log('def= ' + def);
-
     this.value = matrix.replace(/./g, function(a) {
       return /[_\d]/.test(a) && i < val.length ? val[i++] : i >= val.length ? '' : a;
     });
@@ -37,7 +34,6 @@ const mask = selector => {
         this.value = '';
       }
     } else {
-      console.log(this.value.length);
       setCursorPosition(this.value.length, this);
     }
   }

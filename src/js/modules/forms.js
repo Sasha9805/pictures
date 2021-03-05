@@ -1,4 +1,4 @@
-// import checkNumInputs from './checkNumInputs';
+import { postData } from '../services/requests';
 
 const forms = () => {
 
@@ -6,8 +6,6 @@ const forms = () => {
         inputs = document.querySelectorAll('input'),
         textarea = document.querySelectorAll('textarea'),
         upload = document.querySelectorAll('[name="upload"]');
-
-  // checkNumInputs('input[name="user_phone"]');
 
   const message = {
     loading: 'Загрузка...',
@@ -21,16 +19,6 @@ const forms = () => {
   const path = {
     designer: 'assets/server.php',
     question: 'assets/question.php'
-  };
-
-  const postData = async (url, data) => {
-
-    let res = await fetch(url, {
-      body: data,
-      method: 'POST'
-    });
-
-    return await res.text();
   };
 
   const clearInputs = () => {
@@ -60,6 +48,12 @@ const forms = () => {
     item.addEventListener('submit', event => {
 
       event.preventDefault();
+
+      let phone = item.querySelector('[name="phone"]');
+      if (phone && phone.value.length != 18) {
+        phone.focus();
+        return;
+      }
 
       let statusMessage = document.createElement('div');
       statusMessage.classList.add('status');

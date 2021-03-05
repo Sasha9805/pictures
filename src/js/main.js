@@ -23,5 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   checkTextInputs('input[name="name"], [name="message"]');
 
-  showMoreStyles('.button-styles', '.styles-2');
+  showMoreStyles('.button-styles', '.styles .row');
 });
