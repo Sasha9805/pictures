@@ -438,7 +438,9 @@ h4 {
   margin-bottom: 3rem;
 }
 .styles-block img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 153px;
+  height: 214px;
   display: block;
   margin: 0 auto;
 }
