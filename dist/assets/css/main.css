@@ -438,7 +438,7 @@ h4 {
   margin-bottom: 3rem;
 }
 .styles-block img {
-  /* max-width: 100%; */
+  max-width: 100%;
   width: 153px;
   height: 214px;
   display: block;
@@ -1493,6 +1493,9 @@ h4 {
     margin: 4rem auto;
     width: auto;
   }
+  .styles-block img {
+    height: 160px;
+  }
 }
 @media (max-width: 767px) {
   .main-features {
@@ -1574,6 +1577,9 @@ h4 {
   }
   .footer p {
     text-align: center;
+  }
+  .styles-block img {
+    height: 214px;
   }
 }
 @media (max-width: 577px) {

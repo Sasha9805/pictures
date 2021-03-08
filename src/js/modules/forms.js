@@ -5,7 +5,9 @@ const forms = () => {
   const form = document.querySelectorAll('form'),
         inputs = document.querySelectorAll('input'),
         textarea = document.querySelectorAll('textarea'),
-        upload = document.querySelectorAll('[name="upload"]');
+        select = document.querySelectorAll('select'),
+        upload = document.querySelectorAll('[name="upload"]'),
+        sumBlock = document.querySelector('.calc-price');
 
   const message = {
     loading: 'Загрузка...',
@@ -30,9 +32,15 @@ const forms = () => {
       item.value = '';
     });
 
+    select.forEach(item => {
+      item.options[0].selected = true;
+    });
+
     upload.forEach(item => {
       item.previousElementSibling.textContent = 'Файл не выбран';
     });
+
+    sumBlock.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
   };
 
   upload.forEach(item => {
@@ -74,6 +82,12 @@ const forms = () => {
       statusMessage.append(textMessage);
 
       const formData = new FormData(item);
+      if (item.classList.contains('calc-form')) {
+        let price = sumBlock.textContent;
+        if (isFinite(price)) {
+          formData.append('sum', price);
+        }
+      }
       let api = item.closest('.popup-design') || item.classList.contains('calc-form') ? path.designer : path.question;
       console.log(api);
 
