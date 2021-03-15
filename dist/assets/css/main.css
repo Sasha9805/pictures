@@ -1520,6 +1520,9 @@ h4 {
     margin-left: auto;
     margin-right: auto;
   }
+  .main-slider-item > img {
+    max-width: 100%;
+  }
   .card-block {
     padding: 5rem;
   }
