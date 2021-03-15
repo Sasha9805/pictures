@@ -909,9 +909,18 @@ h4 {
   border-bottom: 2px dotted #333;
 }
 .often-questions .accordion-block {
+  /* 1 вариант */
+  /* display: none;
   margin-top: 1rem;
   background-color: #f7e7e6;
-  padding: 3rem 4rem;
+  padding: 3rem 4rem; */
+
+  /* 2 вариант */
+  background-color: #f7e7e6;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
 }
 .often-questions .accordion-block:before {
   content: '';
@@ -923,14 +932,22 @@ h4 {
   border-bottom: 3rem solid #f7e7e6;
 }
 .often-questions .ui-accordion-header-active {
-  cursor: auto;
+  /* cursor: auto; */
   color: #c51abb;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+}
+.often-questions .ui-accordion-header-active + .accordion-block {
+  display: block;
 }
 .often-questions .ui-accordion-header-active span {
   border-bottom: none;
 }
 .often-questions .ui-accordion-content-active {
+  overflow: visible;
+  opacity: 1;
+  padding: 3rem 4rem;
+  margin-top: 1rem;
+
   margin-bottom: 4rem;
 }
 .often-questions .brushes {
