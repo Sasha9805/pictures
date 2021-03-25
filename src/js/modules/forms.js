@@ -88,7 +88,9 @@ const forms = () => {
           formData.append('sum', price);
         }
       }
-      let api = item.closest('.popup-design') || item.classList.contains('calc-form') ? path.designer : path.question;
+      let api = item.closest('.popup-design') || 
+                item.classList.contains('calc-form') || 
+                item.dataset.form !== undefined ? path.designer : path.question;
       console.log(api);
 
       postData(api, formData)
